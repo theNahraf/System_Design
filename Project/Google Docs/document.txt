@@ -1,0 +1,5 @@
+Hello, World!
+This is a simple document editor.
+	indented text after a tab space. 
+[Image: picture.jpg]
+
