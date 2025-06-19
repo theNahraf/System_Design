@@ -204,7 +204,7 @@ public:
     //can have removenotification strategy method
     void update(){
         string notificationContent = notificationObservable->getNotificationContent();
-        for(auto notificationStragety: notificationStrategies){
+        for(const auto notificationStragety: notificationStrategies){
             notificationStragety->sendNotification(notificationContent);
         }
     }
@@ -284,6 +284,7 @@ int main() {
     //clean up
     delete logger;
     delete notificationEngine;
+
 
     return 0;
 }
