@@ -112,7 +112,7 @@ public:
     INotification *getNotification(){
         return currentNotification;
     } 
-     string getNoficationContent() {
+     string getNotificationContent() {
         if (currentNotification) {
             return currentNotification->getContent();
         }
@@ -127,6 +127,18 @@ public:
 };
 
 
+// concreate observer 
+class Logger : public IObserver{
+private:
+    NotificationObservable*  notificationObservable;
+public:
+    Logger(NotificationObservable* observable){
+        this->notificationObservable = observable;
+    }
+    void update() override{
+        cout<< "Logging New Notification: \n" << notificationObservable->getNotificationContent();
+    }
+};
 
 
 
