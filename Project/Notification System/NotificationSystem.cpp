@@ -131,11 +131,58 @@ public:
 };
 
 
+
+//notificatoin services
+//any client code will intereact with this service t
+
+//singleton classs
+class NotificationService{
+private:
+    NotificationObservable* observable;
+    static NotificationService* instance;
+    vector<INotification*> notification;
+
+    NotificationService(){
+        //private constructor
+        observable = new NotificationObservable();
+    }
+
+public:
+    static NotificationService* getInstance(){
+        if(instance == nullptr){
+            instance = new NotificationService();
+        }
+        return instance;
+    }
+
+    //expose the observable so observers can attach 
+    NotificationObservable* getObservable(){
+        return observable;
+    }
+
+    //create a new notification and notifies observers
+    void sendNotification(INotification* notif){
+        notification.push_back(notif);
+        observable->setNotificatoin(notif);
+        
+    }
+
+    ~NotificationService(){
+        delete observable;
+    }
+};
+
+NotificationService* NotificationService::instance = nullptr;
+
 // concreate observer 
 class Logger : public IObserver{
 private:
     NotificationObservable*  notificationObservable;
 public:
+    Logger(){
+        this->notificationObservable = NotificationService::getInstance()->getObservable(); 
+        notificationObservable->addObserver(this);
+    }
     Logger(NotificationObservable* observable){
         this->notificationObservable = observable;
     }
@@ -193,6 +240,11 @@ private:
     NotificationObservable * notificationObservable;
     vector<INotificationStrategy*> notificationStrategies;
 public:
+    NotificationEngine(){
+        this->notificationObservable = NotificationService::getInstance()->getObservable();
+        notificationObservable->addObserver(this);
+    }
+    
     NotificationEngine(NotificationObservable* observable){
         this->notificationObservable = observable;
     }
@@ -210,68 +262,20 @@ public:
     }
 };
 
-//notificatoin services
-//any client code will intereact with this service t
-
-//singleton classs
-class NotificationService{
-private:
-    NotificationObservable* observable;
-    static NotificationService* instance;
-    vector<INotification*> notification;
-
-    NotificationService(){
-        //private constructor
-        observable = new NotificationObservable();
-    }
-
-public:
-    static NotificationService* getInstance(){
-        if(instance == nullptr){
-            instance = new NotificationService();
-        }
-        return instance;
-    }
-
-    //expose the observable so observers can attach 
-    NotificationObservable* getObservable(){
-        return observable;
-    }
-
-    //create a new notification and notifies observers
-    void sendNotification(INotification* notif){
-        notification.push_back(notif);
-        observable->setNotificatoin(notif);
-        
-    }
-
-    ~NotificationService(){
-        delete observable;
-    }
-};
-
-NotificationService * NotificationService::instance = nullptr;
+// NotificationService * NotificationService::instance = nullptr;
 
 int main() {
     //create notification service
     NotificationService* notificationService = NotificationService::getInstance();
-
-    // get ovbservalbe 
-    NotificationObservable* notificationObservable = notificationService->getObservable();
-
     //create a logger observer
-    Logger* logger = new Logger(notificationObservable);
+    Logger* logger = new Logger();
 
     //creawte a notifcatoin engine observer
-    NotificationEngine* notificationEngine =new NotificationEngine(notificationObservable);
+    NotificationEngine* notificationEngine =new NotificationEngine();
     
     notificationEngine->addNotifcationStrategy(new EmailStrategy("nahraf.xd@gmail.com"));
     notificationEngine->addNotifcationStrategy(new SMSStrategy("+1234567890"));
     notificationEngine->addNotifcationStrategy(new PopUpStrategy());
-
-    //attach observerrs
-    notificationObservable->addObserver(logger);
-    notificationObservable->addObserver(notificationEngine);
 
     //create a notification with decorators
     INotification* notification = new SimpleNotifcation("Your order has been shipped!");
