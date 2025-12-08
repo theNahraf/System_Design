@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+
+//this is repositery
 class DepositOnlyaccount{
 public:
     virtual void deposit(double amount) = 0;
@@ -10,6 +12,7 @@ class WithdrawableAccount : public DepositOnlyaccount{
 public:
     virtual void withdraw(double amount) = 0;
 };
+
 
 class Savingaccount : public WithdrawableAccount{
     private:
