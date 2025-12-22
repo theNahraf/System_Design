@@ -3,11 +3,11 @@ using namespace std;
 
 class Car{
     public: 
-    virtual void startEngine() =0;
+    virtual void startEngine() = 0;
     virtual void shiftGear(int gear) = 0;
     virtual void stopEngine() =0;
-    virtual void accelerate() =0;
-    virtual void brake() =0;
+    virtual void () =0;
+    virtual void brake() = 0;
 
     //destructor
     virtual ~Car(){
@@ -84,7 +84,7 @@ public:
 };
 
 int main() {
-
+    //parent class k object child class ko piont kr skta hai..
     Car *mycar = new SportsCar("Ferrari", "488");
     mycar->startEngine();
     mycar->shiftGear(3);
