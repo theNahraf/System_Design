@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+using namespace st
 
 class Singleton {
 private:
