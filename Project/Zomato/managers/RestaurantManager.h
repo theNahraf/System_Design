@@ -5,19 +5,19 @@
 using namespace std;
 
 
-class RestrauntManager{
+class RestaurantManager{
 private:
     vector<Restaurant*> restaurants; 
-    static RestrauntManager*  instance;
+    static RestaurantManager*  instance;
     // SINGLETONE CLASS
-    RestrauntManager(){
+    RestaurantManager(){
         //private constructor
     }
 
 public:
-    static RestrauntManager * getInstance(){
+    static RestaurantManager * getInstance(){
         if(!instance){
-            instance =  new RestrauntManager();
+            instance =  new RestaurantManager();
         }
         return instance;
     }
@@ -39,7 +39,7 @@ public:
 
 };
 
-RestrauntManager* RestrauntManager::instance = nullptr;
+RestaurantManager* RestaurantManager::instance = nullptr;
 
 
 #endif

@@ -68,7 +68,15 @@ public:
     void setPaymentStrategy(PaymentStrategy *p){
         paymentSrategy = p;
     }
-                     
+    
+    double getTotal(){
+        double sum = 0;
+        for(auto it : items){
+            sum+= it.getPrice();
+        }
+        return sum;
+    }
+
 
 
 
