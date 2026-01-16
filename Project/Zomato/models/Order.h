@@ -1,0 +1,81 @@
+#ifndef ORDER_H
+#define ORDER_H
+
+
+#include "Restaurant.h"
+#include "User.h"
+#include "Menu.h"
+#include "../strategies/PaymentStrategy.h"
+#include <bits/stdc++.h>
+using namespace std;
+
+class Order{
+private:
+    static int nextOrderId;
+    int orderId;
+    Restaurant * restaurant;
+    User * user;
+    vector<MenuItem> items;
+    PaymentStrategy* paymentSrategy;
+    double total;
+    string scheduled;
+
+public: 
+    Order(){
+        user = nullptr;
+        restaurant = nullptr;
+        paymentSrategy = nullptr;
+        total = 0.0;
+        scheduled = "";
+        orderId = ++nextOrderId;
+    }
+
+    virtual ~Order(){
+        delete paymentSrategy;
+    }
+    
+    virtual string getType()  const  = 0;
+
+    //Getter and Setters
+    
+    int getOrderId() const{
+        return orderId;
+    }
+
+    User* getUser() const{
+        return user;
+    }
+
+    void setRestaurant(Restaurant* r){
+        restaurant = r;
+    }
+    Restaurant* getRestaurant() const {
+        return restaurant;
+    }
+
+    void setItems(const vector<MenuItem>& its){
+        items = its;
+        total = 0;
+        for(auto & i : items){
+            total+=i.getPrice();
+        }
+    }
+
+    const vector<MenuItem>& getItems() const{
+        return items;
+    }
+
+    void setPaymentStrategy(PaymentStrategy *p){
+        paymentSrategy = p;
+    }
+                     
+
+
+
+};
+
+int Order::nextOrderId = 0;
+
+
+
+#endif
