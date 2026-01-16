@@ -11,6 +11,6 @@ class PaymentStrategy{
 public:
     virtual void Pay(double amount) = 0;
     virtual ~PaymentStrategy(){}
-}
+};
 
 #endif

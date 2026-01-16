@@ -38,10 +38,7 @@ public:
     void setPrice(double p){
         price =  p;
     }
-    ~MenuItem(){
-        cout<<"menu item destructor is called"<<endl;
-
-    }
+  
 };
 
 #endif

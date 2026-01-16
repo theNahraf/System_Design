@@ -26,16 +26,23 @@ public:
         restaurants.push_back(r);
     }
     
-    vector<Restaurant*> searchByLocation(const string & loc){
-        vector<Restaurant*> result;
-        transform(loc.begin(), loc.end(), loc.begin(), ::tolower);
-        for(auto r : restaurants){
-            string rl = r->getLocation();
-            transform(rl.begin(), rl.end(), rl.begin(),  ::tolower);
-            if(rl == loc) result.push_back(r);
-        }
-        return result;
+vector<Restaurant*> searchByLocation(const string & loc){
+    vector<Restaurant*> result;
+
+    string lowerLoc = loc;
+    transform(lowerLoc.begin(), lowerLoc.end(), lowerLoc.begin(), ::tolower);
+
+    for(auto r : restaurants){
+        string rl = r->getLocation();
+        transform(rl.begin(), rl.end(), rl.begin(), ::tolower);
+
+        if(rl == lowerLoc)
+            result.push_back(r);
     }
+
+    return result;
+}
+
 
 };
 
