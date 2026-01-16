@@ -11,7 +11,7 @@ using namespace std;
 class OrderFactory{
 public:
     virtual Order* createOrder(User* user, Cart* cart, Restaurant* restaurant, const vector<MenuItem>& menuitems, 
-                                PaymentStrategy* PaymentStrategy, const string & ordertype) = 0;
+                                PaymentStrategy* PaymentStrategy, const string & orderType) = 0;
     
     virtual ~OrderFactory() {}
 };

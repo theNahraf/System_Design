@@ -17,10 +17,10 @@ public:
         return "Pickup";
     }
     //getttere setters
-    void setUserAddress(const string & add){
+    void setRestaurantAddress(const string & add){
         userAddress = add;
     }
-    string getUserAddress() const {
+    string getRestaurantAddress() const {
         return userAddress;
     }
 };

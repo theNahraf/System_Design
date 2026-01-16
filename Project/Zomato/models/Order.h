@@ -42,6 +42,9 @@ public:
         return orderId;
     }
 
+    void setUser(User* u){
+        user = u;
+    }
     User* getUser() const{
         return user;
     }
@@ -77,8 +80,18 @@ public:
         return sum;
     }
 
+    void setTotal(double p){
+        total = p;
+    }
 
+    
+    void setScheduled(const string& s) {
+        scheduled = s;
+    }
 
+    string getScheduled() const {
+        return scheduled;
+    }
 
 };
 

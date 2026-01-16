@@ -28,7 +28,11 @@ public:
     string getName() const{
         return name;
     }
-    
+
+    string getAddress() const{
+        return address;
+    }
+
 
 };
 
