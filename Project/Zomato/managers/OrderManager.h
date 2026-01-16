@@ -13,7 +13,7 @@ private:
         //private constructor
     }
 public:
-    static OrderManager* getIntance(){
+    static OrderManager* getInstance(){
         if(!instance){
             instance =  new OrderManager();
         }

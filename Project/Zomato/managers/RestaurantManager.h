@@ -26,7 +26,7 @@ public:
         restaurants.push_back(r);
     }
     
-    vector<Restaurant*> searchByLocation(string & loc){
+    vector<Restaurant*> searchByLocation(const string & loc){
         vector<Restaurant*> result;
         transform(loc.begin(), loc.end(), loc.begin(), ::tolower);
         for(auto r : restaurants){

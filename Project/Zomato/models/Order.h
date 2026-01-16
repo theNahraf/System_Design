@@ -93,6 +93,16 @@ public:
         return scheduled;
     }
 
+    bool processPayment() {
+        if (paymentSrategy) {
+            paymentSrategy->Pay(total);
+            return true;
+        } else {
+            cout << "Please choose a payment mode first" << endl;
+            return false;
+        }
+    }
+
 };
 
 int Order::nextOrderId = 0;

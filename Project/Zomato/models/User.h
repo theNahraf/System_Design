@@ -33,6 +33,9 @@ public:
         return address;
     }
 
+    Cart* getCart(){
+        return cart;
+    }
 
 };
 

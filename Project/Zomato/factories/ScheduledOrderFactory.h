@@ -20,7 +20,7 @@ public:
     Order* createOrder(User* user, Cart* cart, 
                     Restaurant* restaurant, 
                     const vector<MenuItem>& menuitems, 
-                    PaymentStrategy* paymentStrategy, 
+                    PaymentStrategy* paymentStrategy, double totalCost, 
                     const string & orderType) override {
 
     Order* order = nullptr;                    
@@ -40,7 +40,8 @@ public:
     order->setItems(menuitems);
     order->setPaymentStrategy(paymentStrategy);
     order->setScheduled(scheduleTime);
-    order->setTotal(cart->getTotalCost());
+    order->setTotal(totalCost);
+
     return order;
                     
       }
