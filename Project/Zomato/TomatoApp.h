@@ -10,7 +10,15 @@
 #include "factories/OrderFactory.h"
 #include "factories/NowOrderFactory.h"
 #include "factories/ScheduledOrderFactory.h"
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <cmath>
+#include <queue>
+#include <stack>
+
 #include "managers/OrderManager.h"
 #include "services/NotificationService.h"
 #include "strategies/UpiPaymentStrategy.h"
@@ -32,8 +40,8 @@ public:
         
         Restaurant* res2 =  new Restaurant("Haldiram", "Kolkata");
         res2->addMenuItem(MenuItem("P1", "Raj Kachori", 80));      
-        res2->addMenuItem(MenuItem("P2", "Pav Bhaji", 100));    
-        res2->addMenuItem(MenuItem("P3", "Dhokla", 50));    
+        res2->addMenuItem(MenuItem("P2", "Pav", 100));    
+        res2->addMenuItem(MenuItem("P3", "Dhokla bhaji", 50));    
         
         
         Restaurant* res3 =  new Restaurant("Sarvana Bhavan", "Chennai");

@@ -1,6 +1,14 @@
 #ifndef RESTAURANT_MANAGER_H
 #define RESTAURANT_MANAGER_H
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <cmath>
+#include <queue>
+#include <stack>
+
 #include "../models/Restaurant.h"
 using namespace std;
 

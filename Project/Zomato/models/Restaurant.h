@@ -1,7 +1,15 @@
 #ifndef RESTAURANT_H
 #define RESTAURANT_H
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <cmath>
+#include <queue>
+#include <stack>
+
 #include"Menu.h"
 using namespace std;
 

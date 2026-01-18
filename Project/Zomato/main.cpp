@@ -1,4 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <map>
+#include <set>
+#include <cmath>
+#include <queue>
+#include <stack>
+
 using namespace std;
 #include "TomatoApp.h"
 
@@ -9,7 +17,7 @@ int main() {
 
     //create Tomato app facade
     TomatoApp* tomato =  new TomatoApp();
-
+ 
     //simulate a user coming in happy flow
 
     User* user = new User(101, "Farhan", "Delhi");
