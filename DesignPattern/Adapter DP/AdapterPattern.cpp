@@ -51,6 +51,7 @@ public:
     }
 };
 
+
 //client code works only wihh ireports interface
 class Client{
 public:
