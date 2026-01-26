@@ -31,7 +31,7 @@ public:
         this->name = name;
     }
     void subscribe(ISubscriber* subscriber) override{
-        if(find(subscribers.begin(), subscribers.end(), subscriber)== subscribers.end()){
+        if(find(subscribers.begin(), subscribers.end(), subscriber) == subscribers.end()){
             subscribers.push_back(subscriber);
             cout <<" subscribed to " << name << endl;
         }
@@ -98,7 +98,7 @@ int main() {
     //one subscriber unsubscribes
     channel->unsubscribe(sub1);
 
-    //channel uploads another video
+    //channel uploads another videoz 
     channel->uploadVideo("namaste dsa video final");
     
 

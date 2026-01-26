@@ -18,7 +18,7 @@ public:
 class SimpleNotifcation : public INotification {
 private:
     string text;
-public:
+public: 
     SimpleNotifcation(const string & msg){
         text = msg;
     }
@@ -76,7 +76,7 @@ public:
 };
 
 class IObservable{
-public:
+public: 
     virtual void addObserver(IObserver* observer) =0;
     virtual void removeObserver(IObserver* observer) = 0;
     virtual void notifyObservers() = 0;
