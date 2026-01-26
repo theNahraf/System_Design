@@ -42,6 +42,7 @@ public:
         cout << "Operating system is loading into memory" << endl;
     }
 };
+
 class BIOS{
     public:
     void boot(CPU& cpu, Memory& memory) {
@@ -73,6 +74,8 @@ public:
         cout << "Computer started successfully!" << endl;
     }
 };
+
+//clint code.....
 int main() {
     ComputerFacade computer;
     computer.startComputer();
