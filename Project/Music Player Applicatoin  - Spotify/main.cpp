@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+
     try {
         auto application = MusicPlayerApplication::getInstance();
 
@@ -57,4 +58,5 @@ int main() {
         cerr << "Error: " << error.what() << endl;
     }
     return 0;
+    
 }

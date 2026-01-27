@@ -12,7 +12,8 @@ public:
     BluetoothSpeakerAdapter(BluetoothSpeakerAPI* api) {
         bluetoothApi = api;
     }
-    
+
+    //convert song into data for output devices -> adapter desingpattern    
     void playAudio(Song* song) override {
         string payload = song->getTitle() + " by " + song->getArtist();
         bluetoothApi->playSoundViaBluetooth(payload);

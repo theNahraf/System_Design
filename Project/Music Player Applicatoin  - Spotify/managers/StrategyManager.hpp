@@ -26,6 +26,7 @@ public:
         }
         return instance;
     }
+    
     PlayStrategy* getStrategy(PlayStrategyType type) {
         if (type == PlayStrategyType::SEQUENTIAL) {
             return sequentialStrategy;

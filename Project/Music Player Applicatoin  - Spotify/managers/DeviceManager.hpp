@@ -39,6 +39,7 @@ public:
         }
     }
 
+    
     IAudioOutputDevice* getOutputDevice() {
         if (!currentOutputDevice) {
             throw runtime_error("No output device is connected.");
