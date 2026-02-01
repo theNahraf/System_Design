@@ -12,7 +12,6 @@
 using namespace std;
 
 //observer design pattern 
-Is
 
 int main() {
     ios::sync_with_stdio(false);
