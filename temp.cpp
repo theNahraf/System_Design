@@ -8,10 +8,10 @@
 #include <stack>
 #include <unordered_map>
 #include <unordered_set>
-
 using namespace std;
 
 //observer design pattern 
+
 
 int main() {
     ios::sync_with_stdio(false);
