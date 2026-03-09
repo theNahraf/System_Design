@@ -1,47 +1,129 @@
 # System_Design
 
-🎯 **Objective**  
-This repository contains structured learning, implementation, and practical use cases for **System Design** using C++. It includes design patterns, core system design concepts, and real-world project simulations.
+🎯 **Objective** This repository serves as a comprehensive guide and code vault for **Software Architecture, Low-Level Design (LLD), and Object-Oriented Programming (OOP)** in C++. It contains structured learning materials, implementations of core design principles, and extensive machine-coding simulations of real-world scalable systems.
 
 ---
 
-## 📁 Folder Structure
+## 📁 Repository Structure
 
-| Folder Name        | Description |
-|--------------------|-------------|
-| `DesignPattern/`   | Implementation of various design patterns like Command, Decorator, etc. |
-| `Project/`         | Hands-on projects including a complete Notification System based on LLD principles. |
-| `Piller of Class/` | Core class structure patterns and foundational components of object-oriented design. |
-| `SOLID/`           | Examples and explanations of the SOLID design principles. |
-| `.vscode/`         | Workspace configuration (for local development support). |
-
----
-
-## ✅ Covered Topics
-
-- 🎯 **Design Patterns**
-  - Singleton
-  - Observer
-  - Decorator
-  - Strategy
-  - Command
-
-- 🧱 **LLD Concepts**
-  - Class Design
-  - Interfaces
-  - Abstraction
-  - Composition over Inheritance
-
-- 💡 **Real-World Projects**
-  - Notification System
-    - Functional + Non-functional requirements covered
-    - Decorator + Observer + Strategy pattern used
-    - Scalable and extensible structure
+| Folder Name | Description |
+| --- | --- |
+| `Piller of Class/` | Foundational OOP concepts (Abstraction, Encapsulation). |
+| `SOLID/` | Code examples demonstrating the violation and adherence to SOLID design principles (e.g., SRP, LSP). |
+| `DesignPattern/` | Extensive implementations of standard Gang of Four (GoF) Design Patterns. |
+| `Project/` | Hands-on, real-world Low-Level Design (LLD) machine-coding projects simulating popular applications. |
+| `.vscode/` | Workspace configurations for local C++ development. |
 
 ---
 
-## 🚀 Getting Started
+## 🧱 Core Concepts Covered
+
+### 1. Object-Oriented Programming (OOP)
+
+* Abstraction
+* Encapsulation
+* Interfaces and Class Design
+
+### 2. SOLID Principles
+
+* Single Responsibility Principle (SRP)
+* Liskov Substitution Principle (LSP)
+* Method Argument & Return Type Rules
+
+---
+
+## 🧩 Design Patterns Implemented
+
+Detailed C++ implementations categorized by their structural purpose:
+
+* **Creational Patterns:** * Singleton (Thread-Safe Eager & Locking)
+* Factory (Simple Factory, Factory Method, Abstract Factory)
+
+
+* **Structural Patterns:** * Adapter
+* Composite
+* Decorator
+* Facade
+* Proxy (Protection, Remote, Virtual)
+
+
+* **Behavioral Patterns:** * Chain of Responsibility (COR)
+* Command
+* Observer
+* Strategy
+* Template Method
+
+
+
+---
+
+## 🚀 Real-World LLD Projects
+
+This repository features several full-scale machine coding projects that apply the above patterns and principles to design scalable systems:
+
+* 🍔 **Food Delivery Application (Zomato Clone)**
+* Features MVC-like structure with factories, managers, models, and robust payment strategies (Credit Card, UPI).
+
+
+* 🎵 **Music Player Application (Spotify Clone)**
+* Complex audio engine design supporting various external device APIs (Bluetooth, Wired, Headphones) and playback strategies.
+
+
+* 📝 **Google Docs LLD**
+* Showcases standard vs. highly optimized document editor design.
+
+
+* 🛒 **Zepto Clone (Inventory Management)**
+* Stock and inventory management system design.
+
+
+* 💳 **Payment Gateway System**
+* Routing and processing logic for payment transactions.
+
+
+* 🔔 **Notification System**
+* Scalable notification dispatcher utilizing Observer, Decorator, and Strategy patterns.
+
+
+* 🎟️ **Discount Coupon System** & 💘 **Dating App**
+* Additional LLD practice projects.
+
+
+
+---
+
+## 💻 Getting Started
+
+### Prerequisites
+
+* A C++ compiler (GCC, Clang, or MSVC) supporting C++11 or later.
+* Make sure you have your build environment set up (the repo includes `.vscode` settings for ease of use).
+
+### Installation & Execution
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/thenahraf/System_Design.git
+```bash
+git clone https://github.com/thenahraf/System_Design.git
+
+```
+
+
+2. Navigate to the desired pattern or project directory:
+```bash
+cd System_Design/DesignPattern/Strategy\ Design\ Pattern/
+
+```
+
+
+3. Compile the C++ file:
+```bash
+g++ -o app StrategyDesignPattern.cpp
+
+```
+
+
+4. Run the executable:
+```bash
+./app
+
+```
